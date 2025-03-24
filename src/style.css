@@ -1,0 +1,76 @@
+body {
+    background-color: #e2e2e2;
+}
+
+.program-search {
+    background-color: #112f4e;
+    color: #fff;
+}
+
+.program-item {
+    display: block;
+    text-align: center;
+    width: min-content;
+}
+
+.program-name {
+    font-weight: bold;
+}
+
+.program-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto;
+    gap: 50px;
+    padding: 20px;
+}
+
+.program-image {
+    width: 230px;
+    border-radius: 10px;
+    transition: ease-in-out 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#more[disabled] {
+    visibility: hidden;
+    cursor: not-allowed;
+
+}
+
+.program-image:hover {
+    transform: scale(1.05);    
+}
+
+.card-actions {
+    margin: 8px;
+    display: grid;
+    gap: 5px;
+    padding: 16px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .program-grid {
+        grid-template-columns: auto auto auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        display: grid;
+        padding: 15px;
+    }
+
+    .program-grid {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .program-grid {
+        grid-template-columns: auto;
+    }
+} 
