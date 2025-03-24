@@ -107,8 +107,8 @@ document.getElementById("grad").addEventListener("click", () => filterPrograms("
 function filterPrograms(type) {
     const allPrograms = document.querySelectorAll("#programData > div");
     allPrograms.forEach(program => {
-        if (type === "grad" || program.getAttribute("data-type") === "grad") {
-            console.log("grad only");
+        if (type === "all" || program.getAttribute("data-type") === type) {
+            console.log("All");
             program.style.display = 'block';
         } else {
             program.style.display = 'none';
