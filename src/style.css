@@ -7,6 +7,10 @@ body {
     color: #fff;
 }
 
+.container {
+    height: 100vh;
+}
+
 .program-item {
     display: block;
     text-align: center;
@@ -35,7 +39,6 @@ body {
 #more[disabled] {
     visibility: hidden;
     cursor: not-allowed;
-
 }
 
 .program-image:hover {
