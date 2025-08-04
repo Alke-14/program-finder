@@ -21,28 +21,29 @@
                     <form class="d-flex flext-wrap">
                         <div class="input-group">
                             <input class="form-control" type="search" id="search" placeholder="I want to study..." aria-label="Search" autocomplete="off" data-search>
-                                <i class="btn btn-warning bi bi-search"></i>
+                                
                         </div>
                     </form>
                 </div>
-                <p class="text-center p-5 fs-5">We have over ## degrees and programs. Find the one that ignites your jaguar passion</p>
-                <div class="d-flex flex-row flex-wrap gap-3 justify-content-center">
+                <p class="text-center p-5 fs-5">We have over multiple degrees and programs. Find the one that ignites your jaguar passion</p>
+                <div class="d-flex flex-row flex-wrap gap-1 justify-content-center">
                     <div class="m-2 align-self-center">
-                        <button id="all" type="button" class="btn btn-warning fw-semibold p-3">All Programs</button>
+                        <button id="all" type="button" class="program-btn program-btn-filter fw-semibold p-3">All Programs</button>
                     </div>
                     <div class="m-2 align-self-center">    
-                        <button id="undergrad" type="button" class="btn btn-warning fw-semibold p-3">Undergraduate Programs</button>
+                        <button id="undergrad" type="button" class="program-btn program-btn-filter fw-semibold p-3">Undergraduate Programs</button>
                     </div>
                     <div class="m-2 align-self-center">
-                        <button id="grad" type="button" class="btn btn-warning fw-semibold p-3">Graduate Programs</button>
+                        <button id="grad" type="button" class="program-btn program-btn-filter fw-semibold p-3">Graduate Programs</button>
                     </div>             
                 </div>    
             </div>
             <div class="row">
+                <h2>Programs Available</h2>
                 <div class="program-grid" id="programData"></div>
                 <div class="card-actions">
                     <div class="text-center ">
-                        <button id="more" type="button" class="btn btn-warning btn-lg fw-semibold p-3">See More</button>
+                        <button id="more" type="button" class="program-btn btn-lg fw-semibold p-3">See More</button>
                     </div>
                     <span>Showing
                         <span id="programCount"></span> of
@@ -50,6 +51,7 @@
                     </span>
                 </div>
             </div>
+        
             
             
             <footer class="text-center p-3">
