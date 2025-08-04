@@ -2,13 +2,49 @@ body {
     background-color: #e2e2e2;
 }
 
-.program-search {
-    background-color: #112f4e;
-    color: #fff;
+.program-btn {
+    background-color: black;
+    color: white;
+    border: none;
 }
 
-.container {
-    height: 100vh;
+.program-btn:hover {
+    background-color: rgb(90, 90, 90) !important;
+    color: white !important;
+    text-decoration: underline;
+}
+
+.program-btn-filter {
+    background-color: black !important;
+    color: white !important;
+    width: 145px;
+    height: 130px;
+    border: none;
+    transition: all 0.2s ease;
+    outline-offset: -8px;
+    outline: solid 2px #fff;
+    
+}
+
+.program-btn-filter:hover {
+    background-color: rgb(90, 90, 90) !important;
+    outline-offset: 5px;
+    border-color: #fff;
+    text-decoration: underline;   
+}
+
+.program-btn-filter:focus:not(:focus-visible) {
+    outline: solid 2px #ff6b6b;
+    outline-offset: -8px;
+}
+
+.btn-lg {
+    border-radius: 10px;
+}
+
+.program-search {
+    background-color: #702e3d;
+    color: #fff;
 }
 
 .program-item {
@@ -39,6 +75,7 @@ body {
 #more[disabled] {
     visibility: hidden;
     cursor: not-allowed;
+
 }
 
 .program-image:hover {

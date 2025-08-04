@@ -1,4 +1,5 @@
-/* FETCH DATA FROM JSON FILE  */
+
+/* FETCH DATA FROM JSON FILE */
 document.addEventListener("DOMContentLoaded", function () {
     fetch('./assets/programs.json')
         .then(response => {
@@ -35,7 +36,7 @@ inputField.addEventListener("input", function (event) {
 
 
 /* LOAD PROGRAMS
-* Add classes to the program cards
+* Add classes to the program grads with respective data-type and classes
 */
 function populatePrograms(programs, type) {
     const programData = document.getElementById("programData");
@@ -65,17 +66,16 @@ function populatePrograms(programs, type) {
     addPrograms(1); // Display first set of programs
 };
 
-
-/* 
-    The following logic uses a variable to determine what behavior to give the LOAD MORE button
-    This button is updated based on what filter is selected (All, Undergrad, Grad)
-*/
+/*
+   The following logic uses a variable to determine what behavior to give the LOAD MORE button.
+   This button behavior is updated based on what filter is selected. 
+ */
 
 let filter = "all";
 
 const loadMoreButton = document.getElementById("more");
 const gradButton = document.getElementById("grad");
-const programIncrement = 4;
+const programIncrement = 8;
 let currentPage = 1;
 
 loadMoreButton.addEventListener("click", function () {
@@ -96,9 +96,11 @@ loadMoreButton.addEventListener("click", function () {
 
 });
 
-/* UPDATE BUTTON BEHAVIOR */
-/* If all programs are loaded into the page, disable the button */
 
+
+
+/* UPDATE BUTTON BEHAVIOR  */
+/* If all programs are loaded into the page, disable the button */
 function handleButtonStatus() {
     const programItems = document.querySelectorAll('[data-type]');
     const totalPrograms = programItems.length;
@@ -110,27 +112,28 @@ function handleButtonStatus() {
     }
 };
 
-function handleGradButtonStatus() {
-    const programItems = document.querySelectorAll('[data-type = "grad"]');
-    const totalPrograms = programItems.length;
-    if (currentPage * programIncrement >= totalPrograms) {
-        loadMoreButton.disabled = true;
-    } else {
-        loadMoreButton.disabled = false;
+// function handleGradButtonStatus() {
+//     const programItems = document.querySelectorAll('[data-type = "grad"]');
+//     const totalPrograms = programItems.length;
+//     if (currentPage * programIncrement >= totalPrograms) {
+//         loadMoreButton.disabled = true;
+//     } else {
+//         loadMoreButton.disabled = false;
         
-    }
-};
+//     }
+// };
 
-function handleUgradButtonStatus() {
-    const programItems = document.querySelectorAll('[data-type = "undergrad"]');
-    const totalPrograms = programItems.length;
-    if (currentPage * programIncrement >= totalPrograms) {
-        loadMoreButton.disabled = true;
-    } else {
-        loadMoreButton.disabled = false;
+// function handleUgradButtonStatus() {
+//     const programItems = document.querySelectorAll('[data-type = "undergrad"]');
+//     const totalPrograms = programItems.length;
+//     if (currentPage * programIncrement >= totalPrograms) {
+//         loadMoreButton.disabled = true;
+//     } else {
+//         loadMoreButton.disabled = false;
         
-    }
-};
+//     }
+// };
+
 
 
 
@@ -176,7 +179,6 @@ function updateProgramCount() {
     document.getElementById("totalPrograms").textContent = document.querySelectorAll('[data-type]').length;
 }
 
-
 /* FILTER BUTTONS */
 document.getElementById("all").addEventListener("click", () => filterPrograms("all"));
 document.getElementById("undergrad").addEventListener("click", () => filterPrograms("undergrad"));
@@ -216,6 +218,7 @@ function filterPrograms(type) {
         handleUgradButtonStatus();
     });
     
+
     gradFilter.addEventListener("click", function () {
         document.querySelectorAll(".program-item").forEach(programElement => {
             console.log("grad");
@@ -228,5 +231,5 @@ function filterPrograms(type) {
         filter = "grad";
         addGrad(1);
         handleGradButtonStatus();
-    });
+    });   
 }
